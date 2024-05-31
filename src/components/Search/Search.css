@@ -1,6 +1,5 @@
 .search {
 	width: 588px;
-	height: 144px;
 }
 
 .searchButton {
@@ -10,7 +9,7 @@
 
 .search-icon {
 	background: rgba(0, 0, 0, 0.1);
-	background-image: url('../../../public/searchpic.svg');
+	background-image: url('/searchpic.svg');
 	background-position: 16px center;
 	background-repeat: no-repeat;
 	padding-left: 56px;

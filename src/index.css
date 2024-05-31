@@ -6,6 +6,9 @@
   backdrop-filter: blur(40px);
   background: rgb(30, 30, 30);
 }
+*{
+    box-sizing: border-box;
+}
 
 a {
   text-decoration: inherit;
@@ -14,7 +17,11 @@ a {
 
 body {
   margin: 0;
-  box-sizing: border-box;
+  background: #121829;
+}
+
+h2,h3{
+  margin: 0;
 }
 
 h1 {
@@ -48,6 +55,6 @@ ul {
 }
 
 .container {
-  max-width: 1440px;
+  width: 1440px;
   padding: 0 120px;
 }

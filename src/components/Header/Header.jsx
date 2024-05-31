@@ -5,7 +5,7 @@ function Header(){
 		<div className="header-wrapper">
 			<div className="header container">
 				<img
-					src="../../../public/logo.svg"
+					src="/logo.svg"
 					alt="logo"
 					className="header__logo"
 				/>
@@ -20,7 +20,7 @@ function Header(){
 						</li>
 						<li className="menu__item">
 							<a href='#'>Войти</a>
-							<img src="../../../public/login.svg" alt="" />
+							<img src="/login.svg" alt="" />
 						</li>
 					</ul>
 				</nav>
