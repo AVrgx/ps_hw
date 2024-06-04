@@ -4,10 +4,11 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
   backdrop-filter: blur(40px);
-  background: rgb(30, 30, 30);
+  background: #121829;
 }
-*{
-    box-sizing: border-box;
+
+* {
+  box-sizing: border-box;
 }
 
 a {
@@ -16,11 +17,13 @@ a {
 
 
 body {
-  margin: 0;
+  width: 1200px;
+  margin: 0 auto;
   background: #121829;
 }
 
-h2,h3{
+h2,
+h3 {
   margin: 0;
 }
 
@@ -55,6 +58,9 @@ ul {
 }
 
 .container {
-  width: 1440px;
-  padding: 0 120px;
+  padding: 0;
+}
+
+.active {
+  color: #fff;
 }

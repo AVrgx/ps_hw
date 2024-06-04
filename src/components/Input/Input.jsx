@@ -1,9 +1,9 @@
-import './Input.css'
+import styles from'./Input.module.css'
 
 const Input =({text, className})=>{
 	return (
 		<>
-		<input className={`input ${className}`} placeholder={text} type="text" />
+		<input className={`${styles.input} ${className}`} placeholder={text} type="text" />
 		</>
 	);
 }

@@ -1,8 +1,8 @@
-import './SearchHeader.css'
+import styles from './SearchHeader.module.css'
 
 function SearchHeader(){
 	return (
-		<h2 className='search__header'>Поиск</h2>
+		<h2 className={styles['search__header']}>Поиск</h2>
 	)
 }
 
