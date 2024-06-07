@@ -1,6 +1,8 @@
 import styles from './Header.module.css'
 
-function Header(){
+function Header({onLogout, activeUser}){
+
+
 	return (
 		<div className={styles["header-wrapper"]}>
 			<div className={`${styles["header"]} container`}>
@@ -19,7 +21,7 @@ function Header(){
 							<div className={styles["item__num"]}>0</div>
 						</li>
 						<li className={styles["menu__item"]}>
-							<a href='#'>Войти</a>
+							{activeUser ? <>{activeUser}<a onClick={onLogout}href='#'>Выйти</a> </>:<a href='#'>Войти</a>}
 							<img src="/login.svg" alt="" />
 						</li>
 					</ul>

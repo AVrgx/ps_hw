@@ -1,0 +1,23 @@
+.login {
+	width: 384px;
+}
+
+.login__header {
+	font-weight: 600;
+	font-size: 64px;
+	line-height: 125%;
+	letter-spacing: -0.02em;
+	color: #ebeef5;
+}
+
+.login__button {
+	width: 201px;
+	padding: 0;
+}
+
+.login__input {
+	margin-top: 27px;
+	margin-bottom: 19px;
+	padding: 12px 16px;
+	color: #fff;
+}
