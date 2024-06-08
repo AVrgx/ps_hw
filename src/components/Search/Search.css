@@ -1,0 +1,17 @@
+.search {
+	width: 588px;
+}
+
+.searchButton {
+	margin-left: 8px;
+	color: #fff
+}
+
+.search-icon {
+	background: rgba(0, 0, 0, 0.1);
+	background-image: url('/searchpic.svg');
+	background-position: 16px center;
+	background-repeat: no-repeat;
+	padding-left: 56px;
+	color: #fff;
+}
