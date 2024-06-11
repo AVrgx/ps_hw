@@ -1,4 +1,4 @@
-import './Search.css';
+import styles from './Search.module.css';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
 
@@ -9,10 +9,10 @@ function Search({ children }) {
 
 	return (
 		<div className="search-wrapper">
-			<div className="search container">
+			<div className={`${styles.search} container`}>
 				{children}
-				<Input className='search-icon' text="Введите название" />
-				<Button className="searchButton" text="Искать" onClick={handleClick}></Button>
+				<Input className={styles['search-icon']} text="Введите название" />
+				<Button className={styles["searchButton"]} text="Искать" onClick={handleClick}></Button>
 			</div>
 		</div>
 	);

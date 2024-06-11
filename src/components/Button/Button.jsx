@@ -1,8 +1,9 @@
-import './Button.css'
+import styles from'./Button.module.css'
 
 function Button({text, onClick, className}){
 	return (
-		<button className={`button ${className}`} onClick={onClick}>{text}</button>
+		<button className={`${styles.button} ${className}`} onClick={onClick}>{text}</button>
+
 	)
 }
 

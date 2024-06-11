@@ -1,9 +1,9 @@
-import './CardList.css';
+import styles from'./CardList.module.css';
 import Card from '../Card/Card';
 
 function CardList({ films }) {
 	return (
-		<div className="cardList container">
+		<div className={`${styles.cardList} container`}>
 			{films.map((film) => (
 				<Card
 					key={film.id}
