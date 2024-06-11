@@ -1,7 +1,14 @@
+import { useContext } from 'react';
 import styles from './Header.module.css'
+import { Context } from '../../context/user.context';
 
-function Header({onLogout, activeUser}){
-
+function Header(){
+	const {userId, setUserId}=useContext(Context)
+	const onLogout = (e) => {
+		e.preventDefault();
+		localStorage.removeItem('activeUser');
+		setUserId(null)
+	}
 
 	return (
 		<div className={styles["header-wrapper"]}>
@@ -21,7 +28,7 @@ function Header({onLogout, activeUser}){
 							<div className={styles["item__num"]}>0</div>
 						</li>
 						<li className={styles["menu__item"]}>
-							{activeUser ? <>{activeUser}<a onClick={onLogout}href='#'>Выйти</a> </>:<a href='#'>Войти</a>}
+							{userId ? <>{userId}<a onClick={onLogout}href='#'>Выйти</a> </>:<a href='#'>Войти</a>}
 							<img src="/login.svg" alt="" />
 						</li>
 					</ul>

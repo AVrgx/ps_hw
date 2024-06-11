@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './App.css';
 import CardList from './components/CardList/CardList';
 import Header from './components/Header/Header';
@@ -7,6 +7,7 @@ import Search from './components/Search/Search';
 import SearchHeader from './components/SearchHeader/SearchHeader';
 import SearchParagraph from './components/SearchParagraph/SearchParagraph';
 import { films } from './const/const';
+import { UserContextProvider } from './context/user.context';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
 	const [name, setName] = useState('');
 	const [login, setLogin] = useState("");
 
-	
+
+
 	useEffect(() => {
 		const userData = JSON.parse(localStorage.getItem('activeUser'));
 		if (userData && userData.name) {
@@ -22,53 +24,17 @@ function App() {
 		}
 	}, [login]);
 
-
-	const onLogin = (e) => {
-		e.preventDefault();
-
-		if (!name.trim()) {
-			alert("Пожалуйста, введите ваше имя.");
-			return;
-		}
-
-		const profile = {
-			name: name,
-
-		};
-
-		const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-
-
-		if (!profiles.find(profile => profile.name === name)) {
-			profiles.push(profile);
-			localStorage.setItem('profiles', JSON.stringify(profiles));
-			localStorage.setItem('activeUser', JSON.stringify({ name: name }));
-
-		} else { localStorage.setItem('activeUser', JSON.stringify({ name: name })); }
-		setName('')
-		setLogin(true);
-
-	};
-
-	const onLogout=(e)=>{
-		e.preventDefault();
-		localStorage.removeItem('activeUser');
-		setActiveUser(null)
-		setLogin(false)
-	}
-
 	return (
-		<>
+		<UserContextProvider>
 			<Header
-			activeUser={activeUser}
-			onLogout={onLogout} />
+				activeUser={activeUser} />
 			<Search>
 				<SearchHeader></SearchHeader>
 				<SearchParagraph></SearchParagraph>
 			</Search>
-			<CardList films={films}/>
-			<LoginForm onLogin={onLogin} name={name} setName={setName}/>
-		</>
+			<CardList films={films} />
+			<LoginForm name={name} setName={setName} />
+		</UserContextProvider>
 	);
 }
 

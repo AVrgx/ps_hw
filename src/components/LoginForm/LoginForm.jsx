@@ -1,10 +1,38 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
 import Button from '../Button/Button'
 import Input from '../Input/Input'
 import styles from './LoginForm.module.css'
+import { Context } from '../../context/user.context';
 
 
-function LoginForm({onLogin, name, setName}) {
+function LoginForm({name, setName}) {
+	const { userId, setUserId } = useContext(Context);
+	const onLogin = (e) => {
+		e.preventDefault();
+
+		if (!name.trim()) {
+			alert("Пожалуйста, введите ваше имя.");
+			return;
+		}
+
+		const profile = {
+			name: name,
+
+		};
+
+		const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+
+
+		if (!profiles.find(profile => profile.name === name)) {
+			profiles.push(profile);
+			localStorage.setItem('profiles', JSON.stringify(profiles));
+			//localStorage.setItem('activeUser', JSON.stringify({ name: name }));
+			setUserId(name)
+		} else { localStorage.setItem('activeUser', JSON.stringify({ name: name })); }
+		setName('')
+		//setUserLogin(true);
+
+	};
 
 	
 	const loginRef = useRef();
